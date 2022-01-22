@@ -5,7 +5,153 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team 3 VJCT Project</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="style sheet" href="./assets/main.css">
+</head>
+<body>
+     <!-- webpage title -->
+     <section class="hero is-primary">
+        <div class="hero-body">
+          <p class="title">
+            USA Covidometer
+          </p>
+          <p class="subtitle">
+            By Catie, Jason, Tom
+          </p>
+        </div>
+      </section>
+    <!-- Row of dropdown menus buttons -->
+    <div class="dropdown">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Dropdown button</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              Deaths
+            </a>
+            <a class="dropdown-item">
+              Positive tests
+            </a>
+           
+          </div>
+        </div>
+      </div>
 
+      <div class="dropdown">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Dropdown button</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              Dropdown item
+            </a>
+            <a class="dropdown-item">
+              Other dropdown item
+            </a>
+            <a href="#" class="dropdown-item is-active">
+              Active dropdown item
+            </a>
+            <a href="#" class="dropdown-item">
+              Other dropdown item
+            </a>
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item">
+              With a divider
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Dropdown button</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              Dropdown item
+            </a>
+            <a class="dropdown-item">
+              Other dropdown item
+            </a>
+            <a href="#" class="dropdown-item is-active">
+              Active dropdown item
+            </a>
+            <a href="#" class="dropdown-item">
+              Other dropdown item
+            </a>
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item">
+              With a divider
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <div class="dropdown-trigger">
+          <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+            <span>Dropdown button</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+        <div class="dropdown-menu" id="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <a href="#" class="dropdown-item">
+              Dropdown item
+            </a>
+            <a class="dropdown-item">
+              Other dropdown item
+            </a>
+            <a href="#" class="dropdown-item is-active">
+              Active dropdown item
+            </a>
+            <a href="#" class="dropdown-item">
+              Other dropdown item
+            </a>
+            <hr class="dropdown-divider">
+            <a href="#" class="dropdown-item">
+              With a divider
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+    <!-- covid variables (deaths, positivity rate, vaccination rate, hospitilization/icu capacity, etc etc) -->
+    <!-- State -->
+    <!-- County -->
+    <!-- City -->
+    <!-- Timeframe (year/month/week/today) -->
+    <!-- Graph -->
+    <div id="graph"></div>
+    <canvas id="myChart"></canvas>
+    <!-- footer -->
+    <!-- link chart.js here? -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- link javascript -->
+    <script src="./assets/script.js"></script>
 </body>
+
 
 </html>
