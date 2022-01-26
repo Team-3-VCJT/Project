@@ -41,16 +41,23 @@ function getData() {
 
   const data = {
     labels: labels,
-    datasets: [{
-      label: 'Data',
+    datasets: [
+      {label: 'Data',
       backgroundColor: 'rgb(255, 99, 132)',
       borderColor: 'rgb(255, 99, 132)',
-      data: graphData,
-    }]
+      type: "line",
+      data: graphData,},
+      {label: 'Data',
+      backgroundColor: 'blue',
+      
+      data: graphData,}
+    ]
   };
+  
+
 
 const config = {
-    type: 'bar',
+    type: '',
     data: data, 
     options: {}
   };
