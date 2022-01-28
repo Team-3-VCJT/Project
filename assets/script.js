@@ -119,9 +119,9 @@ function handleHistoricalData() {
           labels.push(result.date);
           graphData.push(result[categorySelection]);
         });
+        myChart.update();
       }
     });
-  myChart.update();
 }
 
 // display first state results
@@ -161,9 +161,9 @@ function handleSecondData() {
         updatedData.forEach((result) => {
           graphSecondData.push(result[categorySelection]);
         });
+        myChart.update();
       }
     });
-  myChart.update();
 }
 
 // display second state results
