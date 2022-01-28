@@ -7,12 +7,12 @@ var dataTwoLabel = "";
 
 // Functions
 
+//Chart
 const data = {
   labels: labels,
   datasets: [
     {
       label: dataOneLabel,
-
       backgroundColor: "rgb(255, 99, 132)",
       data: graphData,
     },
@@ -30,9 +30,6 @@ const config = {
   options: {},
 };
 var myChart = new Chart(document.getElementById("myChart"), config);
-// drop down menu functions
-
-// dropdown open/close function
 const dropdowns = document.querySelectorAll(".dropdown");
 
 dropdowns.forEach((item) => {
@@ -65,7 +62,6 @@ function handleHistoricalData() {
   dataOneLabel = dataOne.options[dataOne.selectedIndex].value;
   myChart.data.datasets[0].label = dataOneLabel;
   myChart.update();
-  console.log(allHistoricalData);
 
   fetch(fetchUrl)
     .then(function (response) {
@@ -80,7 +76,6 @@ function handleHistoricalData() {
           document.querySelector("#categorySelect").value;
         timeFilter(data);
         updatedData = timeFilter(data);
-        console.log(updatedData);
         updatedData.forEach((result) => {
           labels.push(result.date);
           graphData.push(result[categorySelection]);
@@ -115,15 +110,12 @@ function handleSecondData() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       if (allHistoricalData === "alldata") {
         displayStateSecondHistoricResults(data);
       } else {
-        const categorySelection =
-          document.querySelector("#categorySelect").value;
+        const categorySelection =document.querySelector("#categorySelect").value;
         timeFilter(data);
         updatedData = timeFilter(data);
-        console.log(updatedData);
         updatedData.forEach((result) => {
           graphSecondData.push(result[categorySelection]);
         });
@@ -155,15 +147,12 @@ function timeFilter(data) {
   // pass the filter data function the data and run the function, and define filtered data
   let filteredData = filterData(data);
   function filterData() {
-    console.log(data);
     // filter into filteredData only arrays with dates past the filterDateString
     let filteredData = data.actualsTimeseries.filter((array) => {
       return array.date >= filterDateString;
     });
-    console.log(filteredData);
     return filteredData;
   }
-  console.log(filteredData);
   return filteredData;
 }
 // clear data function
