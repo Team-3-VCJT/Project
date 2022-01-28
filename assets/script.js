@@ -3,42 +3,10 @@ const labels = [];
 const graphData = [];
 const graphSecondData = [];
 
+
 // Functions
 
-// get the cream filling
 
-// fetch url
-//  function displayResults(results) {
-//   results.forEach((result) => {
-//     console.log(result.state, result.actuals.cases);
-//     labels.push(result.state);
-//     graphData.push(result.actuals.cases);
-//     document.getElementById(
-//       "graph"
-//     ).innerHTML += `${result.state}:${result.actuals.cases}`;
-//   });
-// }
-
-// function displayStateResults(results) {
-//   var result = results.filter((object) => {
-//     return object.state === "AK";
-//   });
-//   console.log(result);
-// }
-
-// function getData() {
-//   const fetchUrl =
-//     "https://api.covidactnow.org/v2/states.json?apiKey=30e85e10d30e4c25886360156f029633";
-
-//   fetch(fetchUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       displayResults(data);
-//       displayStateResults(data);
-//     });
-// }
 
 // Event Listeners
 
@@ -46,12 +14,12 @@ const data = {
   labels: labels,
   datasets: [
     {
-      label: "Data",
+
       backgroundColor: "rgb(255, 99, 132)",
       data: graphData,
     },
     {
-      label: "Data 2",
+
       backgroundColor: "blue",
       data: graphSecondData,
     },
@@ -83,10 +51,6 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
   });
 });
 
-// handle data function// add if second data field has no selection, don't run
-function handleAllData() {
-  handleHistoricalData();
-  handleSecondData();
 }
 // fetch url based on first state selection
 function handleHistoricalData() {
@@ -99,71 +63,4 @@ function handleHistoricalData() {
     })
     .then(function (data) {
       console.log(data);
-      displayStateHistoricResults(data);
-      timeFilter(data);
-    });
-}
 
-// display first state results
-function displayStateHistoricResults(data) {
-  const categorySelection = document.querySelector("#categorySelect").value;
-  data.actualsTimeseries.forEach((result) => {
-    labels.push(result.date);
-    graphData.push(result[categorySelection]);
-  });
-}
-
-// fetch url based on second state selection
-function handleSecondData() {
-  const stateSecondDropdownSelection =
-    document.querySelector("#stateSelectSecond").value;
-  const fetchUrl = `https://api.covidactnow.org/v2/state/${stateSecondDropdownSelection}.timeseries.json?apiKey=30e85e10d30e4c25886360156f029633`;
-
-  fetch(fetchUrl)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (data) {
-      console.log(data);
-      displayStateSecondHistoricResults(data);
-    });
-}
-
-// display second state results
-function displayStateSecondHistoricResults(data) {
-  const categorySelection = document.querySelector("#categorySelect").value;
-  data.actualsTimeseries.forEach((result) => {
-    // labels.push(result.date);
-    graphSecondData.push(result[categorySelection]);
-  });
-  myChart.update();
-}
-
-// timefilter function
-function timeFilter(data) {
-  // get current timeframe choice
-  const timeFrameSelect = document.querySelector("#timeFrame").value;
-  // define filter date variable
-  let filterDate = new Date();
-  //  set filter date to current date subtracting selected timeframe
-  filterDate.setDate(filterDate.getDate() - timeFrameSelect);
-  // convert date to string in same format as our dates in data
-  let filterDateString = filterDate.toISOString().split("T")[0];
-  // pass the filter data function the data and run the function, and define filtered data
-  let filteredData = filterData(data);
-  function filterData() {
-    console.log(data);
-    // filter into filteredData only arrays with dates past the filterDateString
-    let filteredData = data.actualsTimeseries.filter((array) => {
-      return array.date >= filterDateString;
-    });
-    console.log(filteredData);
-    return filteredData;
-  }
-  console.log(filteredData);
-}
-// button to submit selected data request
-var submitBtn = document.getElementById("submitBtn");
-submitBtn.addEventListener("click", handleAllData);
-
-// getData();
