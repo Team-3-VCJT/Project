@@ -69,7 +69,7 @@ function handleHistoricalData() {
     })
     .then(function (data) {
       console.log(data);
-      if (allHistoricalData === "alldata") {
+      if (allHistoricalData === "alltime") {
         displayStateHistoricResults(data);
       } else {
         const categorySelection =
@@ -110,10 +110,11 @@ function handleSecondData() {
       return response.json();
     })
     .then(function (data) {
-      if (allHistoricalData === "alldata") {
+      if (allHistoricalData === "alltime") {
         displayStateSecondHistoricResults(data);
       } else {
-        const categorySelection =document.querySelector("#categorySelect").value;
+        const categorySelection =
+          document.querySelector("#categorySelect").value;
         timeFilter(data);
         updatedData = timeFilter(data);
         updatedData.forEach((result) => {
