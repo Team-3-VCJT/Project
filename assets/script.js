@@ -5,52 +5,22 @@ const graphSecondData = [];
 var dataOneLabel = "";
 var dataTwoLabel = "";
 
+
 // Functions
 
-// get the cream filling
 
-// fetch url
-//  function displayResults(results) {
-//   results.forEach((result) => {
-//     console.log(result.state, result.actuals.cases);
-//     labels.push(result.state);
-//     graphData.push(result.actuals.cases);
-//     document.getElementById(
-//       "graph"
-//     ).innerHTML += `${result.state}:${result.actuals.cases}`;
-//   });
-// }
-
-// function displayStateResults(results) {
-//   var result = results.filter((object) => {
-//     return object.state === "AK";
-//   });
-//   console.log(result);
-// }
-
-// function getData() {
-//   const fetchUrl =
-//     "https://api.covidactnow.org/v2/states.json?apiKey=30e85e10d30e4c25886360156f029633";
-
-//   fetch(fetchUrl)
-//     .then(function (response) {
-//       return response.json();
-//     })
-//     .then(function (data) {
-//       displayResults(data);
-//       displayStateResults(data);
-//     });
-// }
 
 const data = {
   labels: labels,
   datasets: [
     {
       label: dataOneLabel,
+
       backgroundColor: "rgb(255, 99, 132)",
       data: graphData,
     },
     {
+
       label: dataTwoLabel,
       backgroundColor: "blue",
       data: graphSecondData,
@@ -83,12 +53,13 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
   });
 });
 
+
 // handle data function// add if second data field has no selection, don't run
 function handleAllData() {
   clearData();
   handleHistoricalData();
   handleSecondData();
-  myChart.update();
+  myChart.update(); 
 }
 // fetch url based on first state selection
 function handleHistoricalData() {
@@ -214,4 +185,4 @@ function clearData() {
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", handleAllData);
 
-// getData();
+
