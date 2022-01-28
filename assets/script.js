@@ -5,6 +5,8 @@ const graphSecondData = [];
 var dataOneLabel = "";
 var dataTwoLabel = "";
 
+// Functions
+
 //Chart
 const data = {
   labels: labels,
@@ -44,13 +46,12 @@ document.querySelectorAll(".dropdown-item").forEach((item) => {
   });
 });
 
-
 // handle data function// add if second data field has no selection, don't run
 function handleAllData() {
   clearData();
   handleHistoricalData();
   handleSecondData();
-  myChart.update(); 
+  myChart.update();
 }
 // fetch url based on first state selection
 function handleHistoricalData() {
@@ -167,5 +168,3 @@ function clearData() {
 // button to submit selected data request
 var submitBtn = document.getElementById("submitBtn");
 submitBtn.addEventListener("click", handleAllData);
-
-
