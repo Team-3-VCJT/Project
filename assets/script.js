@@ -68,7 +68,6 @@ function handleHistoricalData() {
       return response.json();
     })
     .then(function (data) {
-      console.log(data);
       if (allHistoricalData === "alltime") {
         displayStateHistoricResults(data);
       } else {
